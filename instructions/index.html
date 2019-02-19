@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link href="http://bicyclewheel.info/theme/css/style.css" rel="stylesheet" />
+  <link href="../theme/css/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   <title>bicyclewheel.info - Instructions</title>
@@ -23,16 +23,16 @@
     <meta property="og:site_name" content="bicyclewheel.info" />
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="bicyclewheel.info"/>
-    <meta property="og:url" content="http://bicyclewheel.info"/>
+    <meta property="og:url" content=".."/>
     <meta property="og:description" content="bicyclewheel.info"/>
       <meta property="og:image"
-            content="http://bicyclewheel.info/images/bicyclewheelinfo_screenshot.png"/>
+            content="../images/bicyclewheelinfo_screenshot.png"/>
 </head>
 
 <body id="index" class="home">
 
   <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="http://bicyclewheel.info/">bicyclewheel.info </a>
+    <a class="navbar-brand" href="../">bicyclewheel.info </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,16 +45,16 @@
         <!-- Menu items -->
 
         <!-- Pages -->
-        <li class="nav-item"><a class="nav-link active" href="http://bicyclewheel.info/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../instructions/">Instructions</a></li>
 
         <!-- Article categories -->
         <li class="nav-item">
-          <a class="nav-link" href="http://bicyclewheel.info/articles/">Articles</a>
+          <a class="nav-link" href="../articles/">Articles</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav navbar-text ml-auto">
-        <li class="nav-item"><a href="https://github.com/dashdotrobot/bicyclewheel" target="_blank"><h4><i class="fab fa-github-square"></i></h4></a></li>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/dashdotrobot" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
       </ul>
 
     </div>
@@ -70,7 +70,7 @@
     <h2 id="how-to-use-the-bicycle-wheel-app">How to use the Bicycle Wheel App</h2>
 <p>The Bicycle Wheel App is a tool for designing and simulating a virtual bicycle wheel. Calculate stiffness, mass, and rotating inertia, and see how spoke tensions change when you apply forces to the wheel or adjust spoke nipples.</p>
 <h3 id="coordinate-system">Coordinate system</h3>
-<p><img alt="Bicycle wheel coordinate system" class="img-fluid" src="http://bicyclewheel.info/images/coordinate_system.png"></p>
+<p><img alt="Bicycle wheel coordinate system" class="img-fluid" src="../images/coordinate_system.png"></p>
 <p>Forces and deformation are both specified in terms of three directions: radial, lateral, and tangential. The positive <strong>radial</strong> direction points inwards towards the center of the hub. The positive <strong>lateral</strong> direction points towards the non-drive side (NDS) of the bike. The positive <strong>tangential</strong> direction points along the rim in the counter-clockwise direction (forwards, at the road contact point). Positive rim <strong>twist</strong> is defined as a right-handed rotation around the tangential direction (imagine pointing your thumb along the tangential direction, and curling your fingers: that's the direction of positive rim twist).</p>
 <p>The bottom-most spoke is a <strong>non-drive-side leading (pushing) spoke</strong>. The spokes alternate NDS, DS, NDS, ... and leading, leading, trailing, trailing...</p>
 <h3 id="designing-your-wheel">Designing your wheel</h3>
@@ -148,7 +148,7 @@
 <p>The full modeling assumptions and derivations underlying the app are described in detail in my Ph.D. thesis: <a href="#references"><em>Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</em></a>. The app uses the Mode Matrix Model described in Section 2.4.1 of the thesis.</p>
 <p>The mechanical properties and deformations are calculated using my <a href="https://github.com/dashdotrobot/bike-wheel-api">Bike Wheel API</a>. The API accepts options in JSON format and returns a JSON object with the results. The API is built in Python and runs on Amazon AWS Lambda. The Bike Wheel API is just a wrapper for my Python library, <a href="https://github.com/dashdotrobot/bike-wheel-calc">bike-wheel-calc</a>.</p>
 <h2 id="got-feedback-found-a-bug">Got feedback? Found a bug?</h2>
-<p>This app is <strong>VERY</strong> much a work in progress. The code for the app and website is available on <a href="https://github.com/dashdotrobot/bicyclewheel">GitHub</a>. If you find bugs or want to suggest features, log an issue or contact me at <code>mford &lt;at&gt; u.northwestern.edu</code>.</p>
+<p>This app is <strong>VERY</strong> much a work in progress. The code for the app and website is available on <a href="https://github.com/bicyclewheel/bicyclewheel.github.io">GitHub</a>. If you find bugs or want to suggest features, log an issue or contact me at <code>mford &lt;at&gt; u.northwestern.edu</code>.</p>
 <h2 id="references">References</h2>
 <p>[1] Matthew Ford, <a href="https://github.com/dashdotrobot/phd-thesis/releases/download/v1.0/Ford_BicycleWheelThesis_v1.0.pdf">Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</a>, Ph.D. Thesis, Northwestern University (2018)</p>
 <p>[2] Jobst Brandt, <em>The Bicycle Wheel</em>, Avocet (1993).</p>

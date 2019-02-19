@@ -12,3 +12,8 @@ blockquote {
   margin-left: 1em;
   margin-right: 1em;
 }
+
+.icon {
+  font-size: 2em;
+  font-color: #eee;
+}
