@@ -20,7 +20,9 @@ const POLAR_LAYOUT = {
     radialaxis: {
       angle: -90,
       showgrid: false,
-      showticklabels: false
+      showticklabels: false,
+      autorange: 'false',
+      rangemode: 'tozero',
     }
   }
 };
@@ -104,6 +106,19 @@ function remap_theta(theta) {
   return y;
 }
 
+function max_r_traces(traces) {
+  // Find the maximum r value (for setting plot limits)
+  var max_r = 0.;
+  var new_max = 0.;
+  for (var i=0; i<traces.length; i++) {
+    new_max = Math.max.apply(null, traces[i]['r']);
+    if (new_max > max_r) {
+      max_r = new_max;
+    }
+  }
+  return max_r;
+}
+
 function plot_tensions(plot_type, tension_diff) {
 
   var spk_num = parseInt($('#spkNum').val())
@@ -180,6 +195,8 @@ function plot_tensions(plot_type, tension_diff) {
     layout['polar']['angularaxis']['dtick'] = 360. / spk_num;
     layout['height'] = 450;
 
+    layout['polar']['radialaxis']['range'] = [0., 1.02*max_r_traces(traces)];
+
   } else if (plot_type == 'column') {
 
     if (tension_diff == 'difference') {
@@ -214,7 +231,7 @@ function plot_tensions(plot_type, tension_diff) {
   var plot_canvas = document.getElementById('tension-plot');
 
   Plotly.newPlot(plot_canvas, traces, layout, {
-    responsive: true,
+    responsive: false,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
     displayModeBar: false,
     displaylogo: false
@@ -312,6 +329,8 @@ function plot_deformation(plot_type) {
     layout['polar']['angularaxis']['dtick'] = 360. / parseInt($('#spkNum').val());
     layout['height'] = 450;
 
+    layout['polar']['radialaxis']['range'] = [0., 1.02*max_r_traces(traces)];
+
   } else if (plot_type == 'line') {
 
     // Apply options to each trace
@@ -333,7 +352,7 @@ function plot_deformation(plot_type) {
   var plot_canvas = document.getElementById('deform-plot');
 
   Plotly.newPlot(plot_canvas, traces, layout, {
-    responsive: true,
+    responsive: false,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
     displayModeBar: false,
     displaylogo: false
