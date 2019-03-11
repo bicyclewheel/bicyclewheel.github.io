@@ -1,5 +1,5 @@
 
-var POLAR_LAYOUT = {
+const POLAR_LAYOUT = {
   margin: {
     l: 25, r: 25, t: 25, b: 25
   },
@@ -25,7 +25,7 @@ var POLAR_LAYOUT = {
   }
 };
 
-var BAR_LAYOUT = {
+const BAR_LAYOUT = {
   margin: {
     l: 30, r: 30, t: 25, b: 25
   },
@@ -43,7 +43,7 @@ var BAR_LAYOUT = {
   }
 }
 
-var LINE_LAYOUT = {
+const LINE_LAYOUT = {
   margin: {
     l: 75, r: 30, t: 30, b: 30
   },
@@ -216,6 +216,7 @@ function plot_tensions(plot_type, tension_diff) {
   Plotly.newPlot(plot_canvas, traces, layout, {
     responsive: true,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
+    displayModeBar: false,
     displaylogo: false
   });
 }
@@ -334,6 +335,7 @@ function plot_deformation(plot_type) {
   Plotly.newPlot(plot_canvas, traces, layout, {
     responsive: true,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
+    displayModeBar: false,
     displaylogo: false
   });
 }
