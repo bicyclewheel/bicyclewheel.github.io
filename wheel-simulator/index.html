@@ -277,120 +277,117 @@
   </div>
   <div class="col-md-8 col-lg-9">
 
-    <!-- Results navigation tabs -->
-    <ul class="nav nav-tabs" id="resultsTab" role="tablist">
+    <ul class="nav nav-tabs nav-tabs" id="plotTabs" role="tablist">
       <li class="nav-item">
-        <a class="nav-link p-1 px-2 result-navs active" id="plots-tab" data-toggle="tab" href="#resultPlots" role="tab" aria-controls="resultPlots" aria-selected="true">Tensions</a>
+        <a class="nav-link p-1 px-2 active" id="tabTension" data-toggle="tab" href="#panelTension" role="tab" aria-controls="panelTension" aria-selected="true">Spoke tensions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link p-1 px-2 result-navs" id="deform-tab" data-toggle="tab" href="#resultDeform" role="tab" aria-controls="resultDeform" aria-selected="true">Deformation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link p-1 px-2 result-navs" id="results-tab" data-toggle="tab" href="#resultSummary" role="tab" aria-controls="resultSummary" aria-selected="false">Summary</a>
+        <a class="nav-link p-1 px-2" id="tabDeform" data-toggle="tab" href="#panelDeform" role="tab" aria-controls="panelDeform" aria-selected="false">Deformation</a>
       </li>
     </ul>
 
-    <div id="alerts"></div>
-    <div class="tab-content" id="resultsContents">
+    <div class="tab-content" id="plotContents">
 
-      <!-- Results: Plots -->
-      <div class="tab-pane fade show active py-2" id="resultPlots" role="tabpanel" aria-labelledby="plots-tab">
-
-        <div id="tension-plot-type" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="tension-plot-type" autocomplete="off" checked>Polar
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="tension-plot-type" autocomplete="off">Column
-          </label>
-        </div>
-
-        <div id="tension-diff" class="btn-group btn-group-sm btn-group-toggle d-none" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="tension-diff" autocomplete="off" checked>Absolute
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="tension-diff" autocomplete="off">Difference
-          </label>
-        </div>
-
-        <div id="tension-plot"></div>
-
-      </div>
-
-      <!-- Results: Deformation -->
-      <div class="tab-pane fade py-2" id="resultDeform" role="tabpanel" aria-labelledby="plots-tab">
-
-        <div class="form-row">
-
-          <div class="col-md-8">
-            <div id="deform-plot-type" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-secondary active">
-                <input type="radio" name="deform-plot-type" autocomplete="off" checked>Polar
-              </label>
-              <label class="btn btn-secondary">
-                <input type="radio" name="deform-plot-type" autocomplete="off">Line
-              </label>
-            </div>
-
-            <div class="btn-group btn-group-sm">
-              <button type="button" id="deformRadial" class="btn btn-sm btn-secondary deform-button active">
-                Radial
-              </button>
-              <button type="button" id="deformLateral" class="btn btn-sm btn-secondary deform-button">
-                Lateral
-              </button>
-              <button type="button" id="deformTwist" class="btn btn-sm btn-secondary deform-button">
-                Twist
-              </button>
-            </div>
+      <div class="tab-pane fade show active py-2" id="panelTension" role="tabpanel" aria-labelledby="tabTension">
+        <div id="tensionControls" class="my-1">
+          <div id="tensionPlotType" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="tensionPlotType" autocomplete="off" checked>Polar
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionPlotType" autocomplete="off">Column
+            </label>
           </div>
 
-          <div class="col-md-4">
-            <div class="form-group form-group-sm">
-              <label for="scaleFactor">Scale factor:&nbsp;</label><span><strong>20%</strong></span>
-              <input type="range" class="form-control-range custom-range update-range" id="scaleFactor" min="1" max="100" step="1" value="20">
-            </div>
+          <div id="tensionDiff" class="btn-group btn-group-sm btn-group-toggle d-none" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="tensionDiff" autocomplete="off" checked>Absolute
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionDiff" autocomplete="off">Difference
+            </label>
           </div>
-
         </div>
-
-        <div id="deform-plot"></div>
-
       </div>
 
-      <!-- Results: Summary -->
-      <div class="tab-pane fade py-2" id="resultSummary" role="tabpanel" aria-labelledby="results-tab">
+      <div class="tab-pane fade py-2" id="panelDeform" role="tabpanel" aria-labelledby="tabDeform">
+        <div id="deformControls" class="my-1">
+          <div class="form-row">
 
-        <h6>Mass Properties (without hub):</h6>
-        <table class="table table-sm table-hover">
-          <tr><th>Mass</th><td id="sumMassGrams">-</td><td id="sumMassLbs">-</td></tr>
-          <tr><th>Eff. Rotating mass</th><td id="sumMassRotGrams">-</td><td id="sumMassRotLbs">-</td></tr>
-        </table>
+            <div class="col-md-8">
+              <div id="deform-plot-type" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="deform-plot-type" autocomplete="off" checked>Polar
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="deform-plot-type" autocomplete="off">Line
+                </label>
+              </div>
 
-        <h6>Stiffness</h6>
-        <table class="table table-sm table-hover">
-          <tr><th>Radial stiffness</th><td id="sumStiffRadSI">-</td><td id="sumStiffRadLbs">-</td></tr>
-          <tr><th>Lateral stiffness</th><td id="sumStiffLatSI">-</td><td id="sumStiffLatLbs">-</td></tr>
-          <tr><th>Torsional stiffness</th><td id="sumStiffTorSI">-</td><td id="sumStiffTorLbs">-</td></tr>
-        </table>
+              <div class="btn-group btn-group-sm">
+                <button type="button" id="deformRadial" class="btn btn-sm btn-secondary deform-button active">
+                  Radial
+                </button>
+                <button type="button" id="deformLateral" class="btn btn-sm btn-secondary deform-button">
+                  Lateral
+                </button>
+                <button type="button" id="deformTwist" class="btn btn-sm btn-secondary deform-button">
+                  Twist
+                </button>
+              </div>
+            </div>
 
-        <h6>Spoke tension</h6>
-        <table class="table table-sm table-hover">
-          <tr><th>Drive-side tension</th><td id="sumTensDSSI">-</td><td id="sumTensDSLbs">-</td></tr>
-          <tr><th>Non-drive-side tension</th><td id="sumTensNDSSI">-</td><td id="sumTensNDSLbs">-</td></tr>
-          <tr><th>Average tension</th><td id="sumTensAvgSI">-</td><td id="sumTensAvgLbs">-</td></tr>
-          <tr><th>Maximum average tension</th><td id="sumTensMaxSI">-</td><td id="sumTensMaxLbs">-</td></tr>
-        </table>
+            <div class="col-md-4">
+              <div class="form-group form-group-sm">
+                <label for="scaleFactor">Scale factor:&nbsp;</label><span><strong>20%</strong></span>
+                <input type="range" class="form-control-range custom-range update-range" id="scaleFactor" min="1" max="100" step="1" value="20">
+              </div>
+            </div>
 
-        <h6>Strength</h6>
-        <table class="table table-sm table-hover">
-          <tr><th>Lateral force to buckle spokes</th><td id="sumForceLatSI">-</td><td id="sumForceLatLbs">-</td></tr>
-          <tr><th>Radial force to buckle spokes</th><td id="sumForceRadSI">-</td><td id="sumForceRadLbs">-</td></tr>
-        </table>
-
+          </div>
+        </div>
       </div>
+
     </div>
+
+    <!-- Space to display errors and warnings -->
+    <div id="alerts"></div>
+
+    <!-- Results: Plot -->
+    <div id="plotDiv" class="my-1"></div>
+
+    <!-- Results: Summary -->
+    <div id="resultSummary" class="my-1">
+
+      <h6>Mass Properties (without hub):</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Mass</th><td id="sumMassGrams">-</td><td id="sumMassLbs">-</td></tr>
+        <tr><th>Eff. Rotating mass</th><td id="sumMassRotGrams">-</td><td id="sumMassRotLbs">-</td></tr>
+      </table>
+
+      <h6>Stiffness</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Radial stiffness</th><td id="sumStiffRadSI">-</td><td id="sumStiffRadLbs">-</td></tr>
+        <tr><th>Lateral stiffness</th><td id="sumStiffLatSI">-</td><td id="sumStiffLatLbs">-</td></tr>
+        <tr><th>Torsional stiffness</th><td id="sumStiffTorSI">-</td><td id="sumStiffTorLbs">-</td></tr>
+      </table>
+
+      <h6>Spoke tension</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Drive-side tension</th><td id="sumTensDSSI">-</td><td id="sumTensDSLbs">-</td></tr>
+        <tr><th>Non-drive-side tension</th><td id="sumTensNDSSI">-</td><td id="sumTensNDSLbs">-</td></tr>
+        <tr><th>Average tension</th><td id="sumTensAvgSI">-</td><td id="sumTensAvgLbs">-</td></tr>
+        <tr><th>Maximum average tension</th><td id="sumTensMaxSI">-</td><td id="sumTensMaxLbs">-</td></tr>
+      </table>
+
+      <h6>Strength</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Lateral force to buckle spokes</th><td id="sumForceLatSI">-</td><td id="sumForceLatLbs">-</td></tr>
+        <tr><th>Radial force to buckle spokes</th><td id="sumForceRadSI">-</td><td id="sumForceRadLbs">-</td></tr>
+      </table>
+
+    </div>
+
   </div>
 
 </div>

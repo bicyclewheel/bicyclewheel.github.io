@@ -377,7 +377,7 @@ function update_results() {
           display_error('Warning', 'At least one spoke has negative tension. Tension and deformation results may not be accurate.');
         }
 
-        update_plots();
+        update_plot();
 
       }
 
@@ -392,18 +392,21 @@ function update_results() {
   });
 }
 
-function update_plots() {
+function update_plot() {
 
-  // Tension plots
-  var tension_plot_type = $('#tension-plot-type').find(':checked').parent().text().trim().toLowerCase()
-  var tension_diff = $('#tension-diff').find(':checked').parent().text().trim().toLowerCase()
+  if ($('#tabTension').hasClass('active')) {
+    // Plot spoke tensions
+    var tension_plot_type = $('#tensionPlotType').find(':checked').parent().text().trim().toLowerCase()
+    var tension_diff = $('#tensionDiff').find(':checked').parent().text().trim().toLowerCase()
 
-  plot_tensions(tension_plot_type, tension_diff);
+    plot_tensions(tension_plot_type, tension_diff);
+  } else {
+    // Plot deformation
+    var deform_plot_type = $('#deform-plot-type').find(':checked').parent().text().trim().toLowerCase()
 
-  // Deformation plots
-  var deform_plot_type = $('#deform-plot-type').find(':checked').parent().text().trim().toLowerCase()
+    plot_deformation(deform_plot_type);
+  }
 
-  plot_deformation(deform_plot_type);
 }
 
 function show_summary() {
@@ -637,13 +640,9 @@ $(function() {
 
   /* ---------------------------- RESULT PANEL ---------------------------- */
 
-  // Try to resize plots when changing result panels
-  $('.result-navs').click(function() {
-    window.setTimeout(function() {
-      Plotly.Plots.resize(document.getElementById('deform-plot'));
-      Plotly.Plots.resize(document.getElementById('tension-plot'));
-    }, 0);
-  });
+  $('#plotTabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    update_plot();
+  })
 
   // Show scale factor as a percent
   $('#scaleFactor').on('change input', function() {
@@ -652,32 +651,32 @@ $(function() {
 
   // Re-plot deformation when scale factor is changed
   $('#scaleFactor').on('change', function() {
-    update_plots();
+    update_plot();
   });
 
   // Toggle deformation components
   $('.deform-button').click(function() {
     $(this).toggleClass('active');
-    update_plots();
+    update_plot();
   });
 
   // Tension plot options
-  $("#tension-plot-type :input").change(function() {
-    if ($('#tension-plot-type').find(':checked').parent().text().trim().toLowerCase() == 'column') {
-      $('#tension-diff').removeClass('d-none')
+  $("#tensionPlotType :input").change(function() {
+    if ($('#tensionPlotType').find(':checked').parent().text().trim().toLowerCase() == 'column') {
+      $('#tensionDiff').removeClass('d-none')
     } else {
-      $('#tension-diff').addClass('d-none')
+      $('#tensionDiff').addClass('d-none')
     }
-    update_plots();
+    update_plot();
   });
 
-  $("#tension-diff :input").change(function() {
-    update_plots();
+  $("#tensionDiff :input").change(function() {
+    update_plot();
   });
 
   // Deformation plot options
   $("#deform-plot-type :input").change(function() {
-    update_plots();
+    update_plot();
   });
 
   /* -------------------------- CALCULATE BUTTON -------------------------- */

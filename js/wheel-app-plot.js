@@ -1,4 +1,6 @@
 
+var plot_canvas = document.getElementById('plotDiv');
+
 const POLAR_LAYOUT = {
   margin: {
     l: 25, r: 25, t: 25, b: 25
@@ -225,13 +227,11 @@ function plot_tensions(plot_type, tension_diff) {
     ]
 
     layout = $.extend({}, BAR_LAYOUT);
-    layout['height'] = Math.min(0.9 * $('#tension-plot').width(), 450);
+    layout['height'] = Math.min(0.9 * $('#plotDiv').width(), 450);
   }
 
-  var plot_canvas = document.getElementById('tension-plot');
-
   Plotly.newPlot(plot_canvas, traces, layout, {
-    responsive: false,
+    responsive: true,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
     displayModeBar: false,
     displaylogo: false
@@ -346,13 +346,11 @@ function plot_deformation(plot_type) {
     }
 
     layout = $.extend({}, LINE_LAYOUT);
-    layout['height'] = Math.min(0.9 * $('#deform-plot').width(), 450);
+    layout['height'] = Math.min(0.9 * $('#plotDiv').width(), 450);
   }
 
-  var plot_canvas = document.getElementById('deform-plot');
-
   Plotly.newPlot(plot_canvas, traces, layout, {
-    responsive: false,
+    responsive: true,
     modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
     displayModeBar: false,
     displaylogo: false
