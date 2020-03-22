@@ -257,10 +257,10 @@ function plot_tensions(plot_type, tension_diff) {
       for (var s=0; s < spk_num; s++) {
 
         $('#resultsTable > tbody:last-child').append('<tr><td>'+(s+1)+'</td>'+
-                                                          '<td>'+tension_0[s].toFixed(0)+' kgf</td>'+
+                                                          '<td>'+tension_0[s].toFixed(1)+'</td>'+
                                                           '<td>'+(tension_d[s] > 0 ? '+' : '')+
-                                                          tension_d[s].toFixed(0)+' kgf</td>'+
-                                                          '<td>'+tension[s].toFixed(0)+' kgf</td></tr>')
+                                                          tension_d[s].toFixed(1)+'</td>'+
+                                                          '<td>'+tension[s].toFixed(1)+'</td></tr>')
       }
     }
   }
