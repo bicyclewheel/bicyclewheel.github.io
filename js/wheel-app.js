@@ -326,6 +326,9 @@ function update_results() {
   // Clear previous errors and warnings
   $('#alerts').html('');
 
+  // Clear table
+  $("#resultsTable > tbody").empty();
+
   // Disable "Calculate" button
   $('#btnPressMe').text('Please wait...');
   $('#btnPressMe').addClass('disabled');

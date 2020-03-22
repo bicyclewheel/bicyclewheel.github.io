@@ -297,6 +297,9 @@
             <label class="btn btn-secondary">
               <input type="radio" name="tensionPlotType" autocomplete="off">Column
             </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionPlotType" autocomplete="off">Table
+            </label>
           </div>
 
           <div id="tensionDiff" class="btn-group btn-group-sm btn-group-toggle d-none" data-toggle="buttons">
@@ -355,6 +358,14 @@
 
     <!-- Results: Plot -->
     <div id="plotDiv" class="my-1"></div>
+
+    <!-- Results: Table -->
+    <div id="tableDiv" class="my-1 collapse">
+      <table id="resultsTable" class="table table-sm table-hover table-striped">
+        <thead><tr><th>Spoke</th><th>Initial tension</th><th>Tension change</th><th>Final tension</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
     <!-- Results: Summary -->
     <div id="resultSummary" class="my-1">

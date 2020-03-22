@@ -134,11 +134,6 @@ function plot_tensions(plot_type, tension_diff) {
   var tension_d = array_mult_scalar(calc_result['tension']['tension_change'].slice(),
                                     1./9.81);
 
-  array_shift(theta, spk_num/2)
-  array_shift(tension, spk_num/2)
-  array_shift(tension_0, spk_num/2)
-  array_shift(tension_d, spk_num/2)
-
   // Separate traces for left and right spokes
   nds_ind = (spk_num/2) % 2
   var theta_nds = theta.filter(function(e, i) {return i%2 === nds_ind});
@@ -199,6 +194,15 @@ function plot_tensions(plot_type, tension_diff) {
 
     layout['polar']['radialaxis']['range'] = [0., 1.02*max_r_traces(traces)];
 
+    $('#tableDiv').collapse('hide')
+    $('#plotDiv').collapse('show')
+    Plotly.newPlot(plot_canvas, traces, layout, {
+      responsive: true,
+      modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
+      displayModeBar: false,
+      displaylogo: false
+    });
+
   } else if (plot_type == 'column') {
 
     if (tension_diff == 'difference') {
@@ -208,6 +212,10 @@ function plot_tensions(plot_type, tension_diff) {
       y_nds = T_nds;
       y_ds = T_ds;
     }
+
+    // Shift arrays to put spoke 1 in the middle
+    array_shift(y_ds, spk_num/4)
+    array_shift(y_nds, spk_num/4)
 
     var traces = [
       {
@@ -228,17 +236,42 @@ function plot_tensions(plot_type, tension_diff) {
 
     layout = $.extend({}, BAR_LAYOUT);
     layout['height'] = Math.min(0.9 * $('#plotDiv').width(), 450);
+
+    $('#tableDiv').collapse('hide')
+    $('#plotDiv').collapse('show')
+    Plotly.newPlot(plot_canvas, traces, layout, {
+      responsive: true,
+      modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
+      displayModeBar: false,
+      displaylogo: false
+    });
+  } else if (plot_type == 'table') {
+
+    // Hide plot
+    $('#plotDiv').collapse('hide')
+    $('#tableDiv').collapse('show')
+
+    // Check if table has any rows
+    if ($('#resultsTable > tbody').children().length == 0) {
+      // Add a test row
+      for (var s=0; s < spk_num; s++) {
+
+        $('#resultsTable > tbody:last-child').append('<tr><td>'+(s+1)+'</td>'+
+                                                          '<td>'+tension_0[s].toFixed(0)+' kgf</td>'+
+                                                          '<td>'+(tension_d[s] > 0 ? '+' : '')+
+                                                          tension_d[s].toFixed(0)+' kgf</td>'+
+                                                          '<td>'+tension[s].toFixed(0)+' kgf</td></tr>')
+      }
+    }
   }
 
-  Plotly.newPlot(plot_canvas, traces, layout, {
-    responsive: true,
-    modeBarButtonsToRemove: ['sendDataToCloud', 'lasso2d', 'select2d'],
-    displayModeBar: false,
-    displaylogo: false
-  });
 }
 
 function plot_deformation(plot_type) {
+
+  // Hide results table and show plot
+  $('#plotDiv').collapse('show')
+  $('#tableDiv').collapse('hide')
 
   var spk_num = parseInt($('#spkNum').val())
   var rim_radius = calc_result['wheel']['rim']['radius'];
