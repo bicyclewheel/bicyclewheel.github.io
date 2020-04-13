@@ -42,6 +42,7 @@ var RIM_SIZES = [
 
 var RIM_PRESETS = {
   'Alex ALX-295': {
+    'name': 'Alex ALX-295',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 480,
@@ -50,6 +51,7 @@ var RIM_PRESETS = {
     'GJ': 85
   },
   'Alex X404 27-inch': {
+    'name': 'Alex X404 27-inch',
     'matl': 'Alloy',
     'size': '27-inch frac. (630)',
     'mass': 595,
@@ -58,6 +60,7 @@ var RIM_PRESETS = {
     'GJ': 15
   },
   'Alex Y2000 26-inch': {
+    'name': 'Alex Y2000 26-inch',
     'matl': 'Alloy',
     'size': '26-inch dec. (559)',
     'mass': 460,
@@ -66,6 +69,7 @@ var RIM_PRESETS = {
     'GJ': 15
   },
   'Alex Y2000 700C': {
+    'name': 'Alex Y2000 700C',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 550,
@@ -74,6 +78,7 @@ var RIM_PRESETS = {
     'GJ': 20
   },
   'DT Swiss R460': {
+    'name': 'DT Swiss R460',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 460,
@@ -82,6 +87,7 @@ var RIM_PRESETS = {
     'GJ': 100
   },
   'DT Swiss TK540': {
+    'name': 'DT Swiss TK540',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 550,
@@ -90,6 +96,7 @@ var RIM_PRESETS = {
     'GJ': 75
   },
   'H Plus Son TB14': {
+    'name': 'H Plus Son TB14',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 490,
@@ -98,6 +105,7 @@ var RIM_PRESETS = {
     'GJ': 32
   },
   'Mavic A119 32-h': {
+    'name': 'Mavic A119 32-h',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 540,
@@ -106,6 +114,7 @@ var RIM_PRESETS = {
     'GJ': 44
   },
   'Sun-Ringle CR18 700C, 36h': {
+    'name': 'Sun-Ringle CR18 700C, 36h',
     'matl': 'Alloy',
     'size': '700C/29er (622)',
     'mass': 540,
@@ -114,6 +123,7 @@ var RIM_PRESETS = {
     'GJ': 25
   },
   'Sun-Ringle CR18 20-inch': {
+    'name': 'Sun-Ringle CR18 20-inch',
     'matl': 'Alloy',
     'size': '20-inch dec. (406)',
     'mass': 380,

@@ -17,3 +17,7 @@ blockquote {
   font-size: 2em;
   font-color: #eee;
 }
+
+.table-sm {
+  font-size: 12px;
+}
