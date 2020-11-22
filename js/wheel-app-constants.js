@@ -48,7 +48,9 @@ var RIM_PRESETS = {
     'mass': 480,
     'EIrad': 310,
     'EIlat': 210,
-    'GJ': 85
+    'GJ': 85,
+    'Credit': '',
+    'Notes': ''
   },
   'Alex X404 27-inch': {
     'name': 'Alex X404 27-inch',
@@ -57,7 +59,9 @@ var RIM_PRESETS = {
     'mass': 595,
     'EIrad': 130,
     'EIlat': 150,
-    'GJ': 15
+    'GJ': 15,
+    'Credit': '',
+    'Notes': ''
   },
   'Alex Y2000 26-inch': {
     'name': 'Alex Y2000 26-inch',
@@ -66,7 +70,9 @@ var RIM_PRESETS = {
     'mass': 460,
     'EIrad': 110,
     'EIlat': 130,
-    'GJ': 15
+    'GJ': 15,
+    'Credit': '',
+    'Notes': ''
   },
   'Alex Y2000 700C': {
     'name': 'Alex Y2000 700C',
@@ -75,7 +81,9 @@ var RIM_PRESETS = {
     'mass': 550,
     'EIrad': 125,
     'EIlat': 160,
-    'GJ': 20
+    'GJ': 20,
+    'Credit': '',
+    'Notes': '',
   },
   'DT Swiss R460': {
     'name': 'DT Swiss R460',
@@ -84,7 +92,9 @@ var RIM_PRESETS = {
     'mass': 460,
     'EIrad': 280,
     'EIlat': 230,
-    'GJ': 100
+    'GJ': 100,
+    'Credit': '',
+    'Notes': ''
   },
   'DT Swiss TK540': {
     'name': 'DT Swiss TK540',
@@ -93,7 +103,9 @@ var RIM_PRESETS = {
     'mass': 550,
     'EIrad': 211,
     'EIlat': 260,
-    'GJ': 75
+    'GJ': 75,
+    'Credit': '',
+    'Notes': ''
   },
   'H Plus Son TB14': {
     'name': 'H Plus Son TB14',
@@ -102,7 +114,9 @@ var RIM_PRESETS = {
     'mass': 490,
     'EIrad': 89,
     'EIlat': 224,
-    'GJ': 32
+    'GJ': 32,
+    'Credit': '',
+    'Notes': '[1]'
   },
   'Mavic A119 32-h': {
     'name': 'Mavic A119 32-h',
@@ -111,7 +125,20 @@ var RIM_PRESETS = {
     'mass': 540,
     'EIrad': 140,
     'EIlat': 232,
-    'GJ': 44
+    'GJ': 44,
+    'Credit': '',
+    'Notes': ''
+  },
+  "Stan's Grail MK3 24-h": {
+    'name': "Stan's Grail MK3 24-h",
+    'matl': 'Alloy',
+    'size': '700C/29er (622)',
+    'mass': 440,
+    'EIrad': 330,
+    'EIlat': 230,
+    'GJ': 190,
+    'Credit': '[GE]',
+    'Notes': '[1]'
   },
   'Sun-Ringle CR18 700C, 36h': {
     'name': 'Sun-Ringle CR18 700C, 36h',
@@ -120,7 +147,9 @@ var RIM_PRESETS = {
     'mass': 540,
     'EIrad': 110,
     'EIlat': 220,
-    'GJ': 25
+    'GJ': 25,
+    'Credit': '',
+    'Notes': ''
   },
   'Sun-Ringle CR18 20-inch': {
     'name': 'Sun-Ringle CR18 20-inch',
@@ -129,7 +158,9 @@ var RIM_PRESETS = {
     'mass': 380,
     'EIrad': 100,
     'EIlat': 150,
-    'GJ': 25
+    'GJ': 25,
+    'Credit': '',
+    'Notes': ''
   },
 };
 

@@ -11,7 +11,9 @@ $(document).ready(function() {
 			{ data: 'mass'},
 			{ data: 'EIrad'},
 			{ data: 'EIlat'},
-			{ data: 'GJ'}
+			{ data: 'GJ'},
+			{ data: 'Notes'},
+			{ data: 'Credit'}
 		]
 	} );
 } );
