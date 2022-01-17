@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="english">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="http://localhost:8000/theme/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <title>bicyclewheel.info - What can mechanics teach us about wheel truing?</title>
+  <meta property="og:site_name" content="bicyclewheel.info" />
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="What can mechanics teach us about wheel truing?"/>
+  <meta property="og:url" content="http://localhost:8000/articles/wheel-truing/"/>
+  <meta property="og:description" content="When you tighten a spoke, what happens to the other spokes in the wheel? Wheel truing can be a finicky and delicate task. But with a basic knowledge of the mechanics at play you can true your own wheels better than a robot."/>
+  <meta property="article:published_time" content="2019-04-14" />
+      <meta property="article:section" content="articles" />
+      <meta property="article:author" content="Matthew Ford" />
+      <meta property="og:image"
+            content="http://localhost:8000/images/featured/gif-lateral-wave-2.gif"/>
+
+
+
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8000/">bicyclewheel.info </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/wheel-simulator/">Wheel Simulator</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/rim-stiffness/">Rim Stiffness</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:8000/articles/">Articles</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/bicyclewheel/bicyclewheel.github.io" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://localhost:8000/articles/wheel-truing/" rel="bookmark"
+         title="Permalink to What can mechanics teach us about wheel truing?">What can mechanics teach us about wheel truing?</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <small><time class="published" datetime="2019-04-14T00:00:00-05:00">
+      Sun 14 April 2019
+    </time></small>
+    <address class="vcard author">
+      <small>By           <a class="url fn" href="http://localhost:8000/author/matthew-ford.html">Matthew Ford</a>
+</small>
+    </address>
+    <!-- <div class="category"> -->
+        <!-- Category: <a href="http://localhost:8000/articles/">articles</a> -->
+    <!-- </div> -->
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>If you aspire to do your own bike maintenance, chances are you've tried to true your own wheels, or you want to learn how. Maybe you've tried, but weren't satisfied with the results. Either way, you may have been told that truing is one of the <a href="https://www.sheldonbrown.com/tooltips/truing.html">trickiest</a> repair jobs a mechanic must learn, or that the wheel is one of the Great Mysteries upon which <a href="https://www.wheelfanatyk.com/blog/wheel-building-tip-no-5-be-a-wheel-whisperer/">even the Master</a> must meditate.</p>
+<p>Despite the mystique, plenty of riders learn to true their own wheels by following a simple set of guidelines:</p>
+<ul>
+<li>Be patient</li>
+<li>Inspect the wheel first</li>
+<li>Pay attention to spoke tension</li>
+<li>Start with small corrections, and check your work</li>
+<li>Make corrections to either radial, or lateral, but not both at the same time.</li>
+<li>Be patient</li>
+<li>Be patient</li>
+</ul>
+<p>Automatic wheel truing machines work by following a simple algorithm: find the worst spot, adjust the spokes nearby, then find the next worst spot. You can follow that same rule and you'll be successful most of the time. But with a little knowledge of the mechanics at play, you might just do a little better.</p>
+<h4 id="using-the-wheel-app-to-simulate-wheel-truing">Using the Wheel App to simulate wheel truing</h4>
+<p>The Wheel App can show you what happens when you adjust spokes. After you've designed your wheel, click on the <strong>Forces</strong> tab, delete everything in the forces table, and add spoke adjustments in the adjustments table below. Spoke number 1 is the bottom-most spoke in the polar plot, or the center spoke in the column plot.</p>
+<p><img class="img-fluid" alt="Screenshot of the app showing results for tightening a single spoke." src="http://localhost:8000/images/wheel-truing/wheel-truing-screenshot.png" />
+<div class="figure-caption text-center"><strong>Screenshot of the app showing results for tightening a single spoke.</strong></div></p>
+<h2 id="what-happens-when-you-adjust-a-spoke">What happens when you adjust a spoke?</h2>
+<p>The spoke is held in the rim by the spoke nipple, which is threaded onto the end of the spoke. When you tighten a spoke, you are really moving the nipple towards the hub, pulling the rim along with it.</p>
+<blockquote>
+<p>Pro-tip: Never forget which direction to turn to tighten the spoke: if you want <strong>tight</strong>, think <strong>right</strong>: Give a thumbs-up with your <strong>right</strong> hand and point your thumb along the spoke towards the hub. Follow your fingers to <strong>tighten</strong> the spoke. If you want <strong>loose</strong>, think <strong>left</strong>: point your <strong>left</strong> thumb along the spoke towards the hub and follow your fingers to <strong>loosen</strong> the spoke. This is always easier than trying to think of the nipple as a nut, and remember which direction to turn to "tighten" it towards the hub.</p>
+</blockquote>
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Loosening a spoke" src="http://localhost:8000/images/wheel-truing/gif-tight-right.gif">
+    <div class="figure-caption text-center mb-3">
+      <strong>Tightening a spoke</strong>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/gif-loose-left.gif">
+    <div class="figure-caption text-center mb-3">
+      <strong>Loosening a spoke</strong>
+    </div>
+  </div>
+</div>
+
+<p>Two things happen to the spoke when you adjust the nipple: <strong>(1)</strong> the <strong>unstressed</strong> length of the spoke changes (the length the spoke <em>would</em> be if the ends weren't held by the hub and rim), and <strong>(2)</strong> the rim deforms under the additional tension. The change in spoke tension is a function of both effects:</p>
+<p><span class="math">\(\Delta T = K_s(\delta - u \sin{\alpha} - v \cos{\alpha})\)</span></p>
+<p><span class="math">\(\delta = 0.454 N\)</span> is the change in unstressed length in millimeters, where <span class="math">\(N\)</span> is the number of turns of the nipple (for a standard 56 thread-per-inch spoke thread), <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are the <strong>lateral displacement</strong> and <strong>radial displacement</strong> of the spoke nipple, respectively, and <span class="math">\(\alpha\)</span> is the lateral bracing angle of the spoke which depends on the hub width. <span class="math">\(K_s\)</span> is the stiffness of the spoke (higher for larger and shorter spokes).</p>
+<p>What does this equation tell us? Shortening the unstressed length tightens the spoke (the <span class="math">\(\delta\)</span> term), but the rim moves towards the spoke you adjusted, which loosens the spoke. The change in tension would be greater in a wheel with a stiff rim than in a wheel with a flexible rim. Even though the inward <em>radial</em> displacement <span class="math">\(v\)</span> is generally much smaller than the lateral displacement <span class="math">\(u\)</span>, the radial displacement has a larger effect on the tension because <span class="math">\(\alpha\)</span> is usually rather small (and therefore <span class="math">\(\cos{\alpha} &gt; \sin{\alpha})\)</span>.</p>
+<p>To summarize:</p>
+<ul>
+<li>When you turn a spoke nipple in the <em>tightening</em> direction, the spoke gets shorter and tighter.</li>
+<li>The stiffer the spoke, the greater the change in spoke tension.</li>
+<li>The stiffer the rim, the lesser the change in spoke tension.</li>
+</ul>
+<h3 id="what-happens-to-the-rim">What happens to the rim?</h3>
+<p>When you tighten a single spoke, the rim deforms in the same way as if you had applied a force in the direction of the spoke: inwards and slightly towards that spoke's hub flange. The rim is pulled inwards, and towards the side of the spoke you tightened. This creates a lateral "wave" and a radial "bump" near the spoke.</p>
+<p><img class="img-fluid" alt="Rim deformation" src="http://localhost:8000/images/wheel-truing/deformation-single-spoke.png">
+<div class="figure-caption text-center"><strong>Rim deformation due to tightening a single spoke.</strong></div></p>
+<p>The radial bump is confined to a very small area, perhaps only 1-3 spokes wide. The lateral wave, on the other hand, extends over a wide arc, on the order of 8-12 spokes on a 36-spoke wheel. The stiffer the rim, the wider the arc. Even further away from the main wave, the rim bends in the opposite direction as the tightened spoke, like a lopsided spinning potato chip.</p>
+<div class="text-center">
+<img class="img-fluid" alt="Rim deformation animation" src="http://localhost:8000/images/wheel-truing/gif-lateral-wave-2.gif">
+<div class="figure-caption text-center"><strong>Visible lateral wave due to tightening one spoke</strong> (marked with red tape).</div>
+</div>
+
+<div class="my-1"></div>
+
+<p>If the spokes are "crossed," (as they are in almost all wheels) the adjustment also causes the rim to rotate in the direction of the tightened spoke. Tightening a pulling spoke rotates the rim clockwise when viewed from the drive side.</p>
+<h3 id="what-happens-to-the-other-spokes">What happens to the other spokes?</h3>
+<p>Only the two spokes directly adjacent to the adjusted spoke feel the effect of the radial bump. These spokes get shorter and therefore lose tension.</p>
+<p>Further away from the bump, the lateral wave causes the spokes on the same as the wave to loosen and the spokes on the opposite side of the wave to loosen.</p>
+<p>The rotation of the rim causes other pulling spokes to loosen and pushing spokes to tighten, which in turn pulls the rim inwards and outwards, creating a small rippling effect around the rim.</p>
+<p>All of these effects (including the shortening of the adjusted spoke) add up to the picture below. Keep this principle in mind whenever you are building or truing a wheel: generally speaking, tightening a spoke loosens the first and second-nearest spokes, generally tightens the third-nearest, and the effect decays beyond that distance. The exact influence of course depends on the number of spokes, the rim stiffness, and the hub geometry, but this general rule is applicable to a wide range of rims.</p>
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <h6>Radial effect</h6>
+    <img class="img-fluid" alt="Radial effect on tension" src="http://localhost:8000/images/wheel-truing/tension-components-v.png">
+  </div>
+
+  <div class="col-sm-4 text-center">
+    <h6>Lateral effect</h6>
+    <img class="img-fluid" alt="Lateral effect on tension" src="http://localhost:8000/images/wheel-truing/tension-components-u.png">
+  </div>
+
+  <div class="col-sm-4 text-center">
+    <h6>Rotation effect</h6>
+    <img class="img-fluid" alt="Rotation effect on tension" src="http://localhost:8000/images/wheel-truing/tension-components-w.png">
+  </div>
+</div>
+
+<div class="text-center">
+  <h5>Total effect on spoke tensions</h5>
+  <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/tension-components-total.png">
+</div>
+
+<div class="figure-caption text-center mb-3">The vertical scale in the first three images is the same, although the "zero" line is shifted in the radial plot.</div>
+
+<h2 id="common-adjustments">Common adjustments</h2>
+<p>One of the difficulties in truing a wheel is that every correction seems to create a new problem. Many a beginner has spent an hour trying to straighten a wheel only to find it in worse shape than when they started. To avoid headaches, mechanics follow a simple guideline: <em>adjust spokes in groups such that only the desired degree of freedom (radial or lateral) is affected</em>.</p>
+<h3 id="radial-adjustment">Radial adjustment</h3>
+<p>Radial truing is more difficult, and less-often necessary, than lateral truing. However, if you need to correct a radial error, you should generally work with a group of two or three spokes, depending on exactly where the error is.</p>
+<p><strong>If the bump occurs between two spokes</strong>, tighten the two spokes immediately adjacent the error by the same amount. This will pull the rim inwards. It will also create a small lateral wave to either side of the adjusted spokes, but this error is smaller than the radial change and can usually be corrected in subsequent lateral truing.</p>
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/rad_2_def.png">
+  </div>
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/rad_2_tens.png">
+  </div>
+</div>
+
+<div class="figure-caption text-center mb-3">
+<strong>Rim deformation and tension change for a radial adjustment between spokes.</strong> The two spokes near the center of the figure have each been tightened by 1/2 a turn.
+</div>
+
+<div class="my-1"></div>
+
+<p><strong>If the bump occurs at a single spoke</strong>, tighten that spoke, and tighten the two spokes immediately adjacent by half this amount. This will pull the rim inwards symmetrically. The tightening on the left and right sides will roughly cancel out (note: only on symmetric wheels).</p>
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/rad_3_def.png">
+  </div>
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/rad_3_tens.png">
+  </div>
+</div>
+
+<div class="figure-caption text-center mb-3">
+<strong>Rim deformation and tension change for a radial adjustment between spokes. </strong> The two spokes near the center of the figure have each been tightened by 1/2 a turn.
+</div>
+
+<h3 id="lateral-adjustment">Lateral adjustment</h3>
+<p>It is generally best to finish with a round of lateral truing, since the relatively large adjustments required for radial truing can cause lateral errors despite one's best efforts. The rim is much more flexible in the lateral direction, so it's possible to make large corrections without affecting the radial direction. However, one should still take care to make independent adjustments.</p>
+<p>Generally, a lateral adjustment should be made with a group of three spokes, tightening (or loosening) the spoke in the middle by about 1/2 a turn, and making the opposite adjustment to the two adjacent spokes by about a 1/4 turn. This type of adjustment also minimizes the tension increase of the center spoke by "letting out slack" from the other side of the wheel.</p>
+<div class="row">
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/lat_3_def.png">
+  </div>
+  <div class="col-sm-6">
+    <img class="img-fluid" alt="Total effect on spoke tension" src="http://localhost:8000/images/wheel-truing/lat_3_tens.png">
+  </div>
+</div>
+
+<div class="figure-caption text-center mb-3">
+<strong>Rim deformation and tension change for an independent lateral adjustment on 3 spokes.</strong>
+</div>
+
+<h3 id="adjacent-tight-and-loose-spokes-on-same-side">Adjacent tight and loose spokes on same side</h3>
+<p>Machine-built wheels are trued by an iterative "hunt-and-peck" method, essentially applying the corrections above in a rote algorithm. To my knowledge, most automatic truing machines don't measure spoke tensions, so it's possible for large deviations in tension to "hide" from the machine because the wheel is balanced by large corrections at nearby spokes.</p>
+<p>One issue I have come across in my experience is a large difference in tension between two adjacent spokes on the same side of the wheel: one tighter than average and one looser than average. Let's look at what happens when you tighten and loosen two adjacent spokes on the same side:</p>
+<div class="mx-auto text-center">
+  <img class="img-fluid" alt="Rim deformation" src="http://localhost:8000/images/wheel-truing/twist_def.png" />
+</div>
+
+<div class="figure-caption text-center mb-3"><strong>Rim deformation due to tight and loose spoke on the same side.</strong> Laterally, the rim seems to "twist" about a point in between the spokes.</div>
+
+<p>This type of error essentially produces a twisting motion around a point in between the spokes. The neighboring spokes pull the rim back to center, but the tendency of the rim to remain straight produces a large wave on either side of the offending spokes. A truing machine, unaware of the real underlying problem, will try to correct this by tightening and loosening the spokes near the peak of each wave, producing even more non-uniform spoke tensions.</p>
+<p>When you are truing your own wheel (or touching up a machine-built wheel), pluck every spoke on a single side to look for errors like this and correct accordingly. You will still need to do lateral truing after correcting these, but hopefully your headaches will be minimized.</p>
+<h2 id="automatic-truing">Automatic truing</h2>
+<p>Automated machinery has taken over many of the steps of wheelbuilding including <a href="https://www.hollandmechanics.com/machinery/bicycle-wheel/hub-filling/">"filling"</a> the hub with spokes, <a href="https://www.hollandmechanics.com/machinery/bicycle-wheel/easy-cam-lacer/">lacing</a> the spokes into the rim (assisted by a dexterous human operator), <a href="https://www.hollandmechanics.com/machinery/bicycle-wheel/tightening/">pre-bending and tensioning</a> the spokes, and of course truing the wheel. Initial tensioning machines generally work by tightening the spokes to a roughly uniform tension (with the rim and hub rigidly clamped in place). The spoke tension can be estimated either by the torque required to drive the spoke nipple, or the <a href="https://patents.google.com/patent/US3507027A/en">resonant frequency of the spoke</a>.</p>
+<p>To my knowledge, modern automatic truing machines follow a <a href="https://patents.google.com/patent/US4585046A/en">"hunt-and-peck" algorithm</a>, wherein the machine spins the wheel to find the worst wobbles and makes corrections at the peak of each wobble iteratively until the wheel is within spec. Every wheel responds slightly differently to the same spoke adjustment, so the machine parameters have to be tuned so that it is not so aggressive as to over-correct errors, and not so timid as to require dozens of adjustments. Even on the best machines, this process doesn't measure or try to control spoke tensions.</p>
+<p>In theory, an intelligent machine could be designed which measures the current state of the wheel (lateral wobble, radial wobble, and spoke tensions), and makes corrections <em>in a single pass</em> to simultaneously minimize both geometric and tension errors. This machine would need a model (and an inverse model) which predicts the changes in spoke tensions and rim shape resulting from a spoke adjustment (and vice-versa). <a href="https://patents.google.com/patent/US5103414A/en">Jim Papadopoulos and his co-inventors</a> showed how such a model can be easily measured by performing only a few experiments on a given wheel and described how the model can be used. The Bicycle Wheel Simulator generates this model directly from mechanics theory.</p>
+<p>To my knowledge, such a "smart truing machine" has never been designed or tested. Perhaps the cost and complexity of overcoming the remaining challenges in measurement and repeatability are not worth the benefits of reaching a market already satisfied by the work of expert artisans. This is one of the reasons why, despite increasing automation of the bike industry, hand-built wheels are still the best your money can buy.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div><!-- /.entry-content -->
+</section>
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+</body>
+</html>

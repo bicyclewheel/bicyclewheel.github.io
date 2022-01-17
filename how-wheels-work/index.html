@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="english">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="http://localhost:8000/theme/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <title>bicyclewheel.info - How Wheels Work</title>
+  <!-- Open Graph tags -->
+    <meta property="og:site_name" content="bicyclewheel.info">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bicyclewheel.info">
+    <meta property="og:url" content="http://localhost:8000">
+    <meta property="og:description" content="bicyclewheel.info">
+      <meta property="og:image"
+            content="http://localhost:8000/images/bicyclewheelinfo_screenshot.png">
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8000/">bicyclewheel.info </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/wheel-simulator/">Wheel Simulator</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/rim-stiffness/">Rim Stiffness</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/articles/">Articles</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/bicyclewheel/bicyclewheel.github.io" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+
+
+    <h1 id="how-does-a-bicycle-wheel-work">How does a bicycle wheel work?</h1>
+<p>The bicycle wheel is a triumph of elegance and simplicity. Despite rapidly-changing materials and manufacturing methods, a typical wheel built today resembles a typical wheel of the 1890s in its basic design and construction.</p>
+<p>![Image showing an old wheel and a modern wheel]</p>
+<p>One reason for the success of the bicycle wheel is the efficient <strong>division of labor</strong> between its components. <strong>The rim</strong> supports the tire, spreads out loads to be shared by multiple spokes, and keeps the spokes under tension. <strong>The spokes</strong> channels forces and torques between the hub and the rim. <strong>The hub</strong> houses the hub bearing, and transmits torque (from the drivetrain or disc brake) to the spokes.</p>
+<p>The rim and spokes work together to support <em>radial</em>, <em>lateral</em>, and <em>tangential</em> forces:</p>
+<ul>
+<li><strong>Radial</strong> forces act (or outwards) towards the hub (away from the hub). The force from the ground on an upright, straight-running bicycle is a radial force.</li>
+<li><strong>Lateral</strong> forces act sideways, perpendicular to the plane of the wheel. Lateral forces are encountered when the bike is leaned sideways (without turning), when skidding, or in sudden steering maneuvers.</li>
+<li><strong>Tangential</strong> forces act in the direction that the rim turns. The force that propels the bike when pedaling, or stops the bike when braking, is a tangential force.</li>
+</ul>
+<p>The spokes support these forces by changing their tension (more on that below). For example, when supporting the rider's weight, the spokes pointing toward the ground lose some tension. The spokes far away from the force (including the spokes above the hub) aren't very much affected. The difference between the high tension in the spokes above the hub and the (now) lower tension in the spokes below the hub add up to a <em>net</em> force pointing upwards on the hub. When supporting a lateral force, the spokes on one side of the rim near the force increase their tension, while the spokes on the other side lose some tension. When supporting a tangential force, the "pulling" spokes increase their tension while the "pushing" spokes lose some tension. Since the spokes are angled forwards and backwards, the difference in tension produces a net force.</p>
+<p>![Three plots showing tension change for radial, lateral, and tangential force]</p>
+<p>The stiffness of the rim prevents a single spoke from taking all the force by itself. Instead, the force is spread out to multiple spokes near where the force is applied. The number of spokes sharing the load is determined by the ratio of the rim stiffness divided by the spoke stiffness. The spokes are stiffest in the radial direction (because they point almost radially outwards). The spoke stiffness in the lateral direction is much smaller (on the order of 100 times smaller), and the tangential stiffness is comparable to the lateral stiffness. The rim is very stiff in the tangential direction and considerably less stiff in the radial and lateral directions. Therefore:</p>
+<ul>
+<li>In the <strong>radial</strong> direction, the rim stiffness is low and the spoke stiffness is high, so the load is spread to <strong>a few</strong> spokes, usually 3 or 4 in a 36-spoke wheel.</li>
+<li>In the <strong>lateral</strong> direction, the rim stiffness is low and the spoke stiffness is low, so the load is spread out to <strong>several</strong> spokes, usually 8 to 10 in a 36-spoke wheel.</li>
+<li>In the <strong>tangential</strong> direction, the rim stiffness is high and spoke stiffness is low, so the load is spread out to <strong>many</strong> spokes, essentially evenly distributed around the entire wheel.</li>
+</ul>
+<p>In the words of Jim Papadopoulos,</p>
+<blockquote>
+<p>"...it may be most helpful to think of a bicycle wheel as a long, bendable, twistable, curved rod (or beam) held in place by 36 springs anchored in a firmly-held hub. Forces in any direction applied to a point on the rim always produce the greatest effects in spokes nearby."</p>
+</blockquote>
+<h2 id="role-of-spoke-tension">Role of spoke tension</h2>
+<p>In order for the spokes to support the rim, they need to be able to support <em>compression</em> (pushing) and <em>tension</em> (pulling). Take a spoke out of the wheel and pull on its ends, and it will stretch ever so slightly (you won't be able to measure or feel it without special equipment). But if you try to compress the same spoke, it will just bend like a floppy noodle (engineers call this <em>buckling</em>). The trick that makes bicycle wheels work is <em>prestress</em>: the spoke is held in tension by the hub and the rim. Now the spoke can support "compression" by losing some of this initial tension. As long as the spoke doesn't lose all of its initial tension, it will act just like an ideal spring in both directions. This is why it's important to build wheels to a sufficiently high tension: they must not lose tension under the complicated combination of radial, lateral, and tangential loads supported by the wheel.</p>
+<p>Many people believe that higher spoke tension makes a stiffer wheel. <strong>This is false</strong>. You may get the impression that a wheel with low spoke tension has low stiffness because if you put a large lateral force on it, the spokes near the load will buckle and the stiffness of the wheel will suddenly decrease. Countless wheel gurus have debunked the "tighter = stiffer" myth.</p>
+<p><strong>In fact, once the wheel has sufficient tension to prevent buckling, increasing spoke tension <em>decreases</em> the lateral stiffness</strong>. This counterintuitive effect arises because the inward pull of the spokes actually puts the rim under <em>compression</em>, and just like in the spoke, compression leads to buckling. The rim is much wider than a single spoke (and it's supported <em>by</em> the spokes), so it doesn't buckle as easily, but with enough spoke tension the compressive force is enough to buckle the rim into a "taco." But even before it buckles, the compressive force in the rim steadily decreases its lateral stiffness. The spoke stiffness and rim stiffness work together in a complex way, but the net result is that the total stiffness of the complete wheel also decreases with increasing spoke tension.</p>
+<h2 id="spoke-patterns">Spoke patterns</h2>
+
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+</body>
+</html>

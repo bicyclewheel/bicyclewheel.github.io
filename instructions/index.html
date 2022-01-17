@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="english">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="http://localhost:8000/theme/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <title>bicyclewheel.info - Instructions</title>
+  <!-- Open Graph tags -->
+    <meta property="og:site_name" content="bicyclewheel.info">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bicyclewheel.info">
+    <meta property="og:url" content="http://localhost:8000">
+    <meta property="og:description" content="bicyclewheel.info">
+      <meta property="og:image"
+            content="http://localhost:8000/images/bicyclewheelinfo_screenshot.png">
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8000/">bicyclewheel.info </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/wheel-simulator/">Wheel Simulator</a></li>
+        <li class="nav-item"><a class="nav-link active" href="http://localhost:8000/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/rim-stiffness/">Rim Stiffness</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/articles/">Articles</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/bicyclewheel/bicyclewheel.github.io" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+
+
+    <h2 id="how-to-use-the-bicycle-wheel-app">How to use the Bicycle Wheel App</h2>
+<p>The Bicycle Wheel App is a tool for designing and simulating a virtual bicycle wheel. Calculate stiffness, mass, and rotating inertia, and see how spoke tensions change when you apply forces to the wheel or adjust spoke nipples.</p>
+<h3 id="coordinate-system">Coordinate system</h3>
+<p><img alt="Bicycle wheel coordinate system" class="img-fluid" src="http://localhost:8000/images/coordinate_system.png"></p>
+<p>Forces and deformation are both specified in terms of three directions: radial, lateral, and tangential. The positive <strong>radial</strong> direction points inwards towards the center of the hub. The positive <strong>lateral</strong> direction points towards the non-drive side (NDS) of the bike. The positive <strong>tangential</strong> direction points along the rim in the counter-clockwise direction (forwards, at the road contact point). Positive rim <strong>twist</strong> is defined as a right-handed rotation around the tangential direction (imagine pointing your thumb along the tangential direction, and curling your fingers: that's the direction of positive rim twist).</p>
+<p>The bottom-most spoke is a <strong>non-drive-side leading (pushing) spoke</strong>. The spokes alternate NDS, DS, NDS, ... and leading, leading, trailing, trailing...</p>
+<h3 id="designing-your-wheel">Designing your wheel</h3>
+<p>Design your wheel by selecting options for the rim, hub, and spokes.</p>
+<h4 id="rim-tab">Rim tab</h4>
+<p>You may choose from a short list of rims which have already been characterized, or design your own from scratch. The app does not perform any checks to ensure that your rim is feasible. For guidance on the values below, try choosing some presets to see what values they have.</p>
+<p><strong>Material</strong>: The material sets the <em>density</em>, the <a href="https://en.wikipedia.org/wiki/Young%27s_modulus"><em>Young's modulus</em></a>, and <a href="https://en.wikipedia.org/wiki/Shear_modulus"><em>shear modulus</em></a>. The density, together with the wheel size and mass, determines the cross-sectional area of the rim. The cross-sectional area generally has a very small effect on the mechanical behavior. The Young's modulus and shear modulus are already incorporated into the bending stiffnesses, and therefore have no direct effect on the mechanical behavior of the wheel.</p>
+<p><strong>Wheel Size</strong>: Select from a list of standard wheel sizes. This determines the <em>radius</em> of the rim. All else held equal, small wheels are inherently stiffer and stronger than large wheels.</p>
+<p><strong>Mass</strong>: The mass of the rim has a negligible effect on the mechanical properties (unless it is very small), but has a large effect on the inertial properties of the wheel.</p>
+<p><strong>Radial stiffness</strong>: The radial bending stiffness is the resistance of the rim cross-section to bending within its initial plane (think of a rim being squashed top-to-bottom). It is the product of the Young's modulus and the <a href="https://en.wikipedia.org/wiki/Second_moment_of_area">second moment of area</a> of the rim cross-section in the radial direction. Deep rim sections have a higher radial stiffness than shallow rim sections.</p>
+<p><strong>Lateral stiffness</strong>: The lateral bending stiffness is the resistance of the rim cross-section to bending out of its initial plane (think of a rim being bent sideways). The lateral stiffness and torsional stiffness are coupled and both contribute to out-of-plane deformation. The overall lateral stiffness will be dominated by the lower of the two. The lateral stiffness is the product of the Young's modulus and the <a href="https://en.wikipedia.org/wiki/Second_moment_of_area">second moment of area</a> of the rim cross-section in the lateral direction. Wide rim sections have a higher lateral stiffness than narrow rim sections.</p>
+<p><strong>Torsional stiffness</strong>: The torsional stiffness is the resistance of the rim cross-section to twisting about its own centerline. As noted above, lateral deformations generally involve both lateral bending and twisting of the rim. The torsional stiffness is the product of the shear modulus and the <a href="https://en.wikipedia.org/wiki/Torsion_constant">torsion constant</a> of the rim cross-section. The torsional stiffness is almost always smaller than the lateral bending stiffness, so it generally dominates the lateral stiffness of the wheel. Double-wall rims generally have much higher torsional stiffness than single-wall rims.</p>
+<blockquote>
+<p>The rims included in the app were measured using the <a href="https://rdcu.be/GPFI">acoustic measurement technique developed by Ford, et. al.</a>. The measured stiffnesses were rounded to convenient values.</p>
+</blockquote>
+<h4 id="hub-tab">Hub tab</h4>
+<p><strong>Rim-to-flange distance</strong>: Specify the hub flange positions (lateral distance from the rim center-plane to each hub flange) for the drive side and non-drive side. If the Symmetric option is selected, drag either slider and the other will automatically mirror it. If the Symmetric option is not selected, you may independently set each flange position. Rear wheels and disc-brake wheels are commonly asymmetric due to the extra width needed for the sprocket or disc on one side of the hub. The flange position should be smaller on the side with the sprockets or disc.</p>
+<blockquote>
+<p>Note: The app assumes that all the spoke heads on a given flange have the same lateral position. This is not strictly true since inbound and outbound spokes will have slightly different lateral angles.</p>
+</blockquote>
+<p><strong>Flange diameter</strong>: Specify the hub flange diameter (the diameter of the circle of spoke holes). Increasing the flange diameter increases the wind-up stiffness of the wheel, but otherwise has little effect.</p>
+<blockquote>
+<p>Note: The hub is assumed to be rigid. For radial and lateral forces, this is a reasonable approximation as long as the flange diameter is small compared to the diameter of the wheel. However, a real hub has some torsional flexibility which can result in more torque being transmitted through the drive-side spokes than the non-drive-side spokes.</p>
+</blockquote>
+<h4 id="spokes-tab">Spokes tab</h4>
+<p><strong>Number of spokes</strong>: The total number of spokes in the wheel. This number must be even since there must be an equal number of spokes on the drive side and non-drive side.</p>
+<p><strong>Spoke pattern</strong>: Choose the spoke arrangement for the wheel. Increasing the number of crossings increases the torsional stiffness of the wheel dramatically, but slightly decreases the lateral and radial stiffness.</p>
+<blockquote>
+<p>Note: A radial-spoked wheel with no spoke tension has theoretically zero torsional stiffness, which leads to a "Linear algebra error." Add at least 1 kgf of tension in order to correct the error.</p>
+</blockquote>
+<p><strong>Material</strong>: The material sets the <em>density</em> and <em>Young's modulus</em> of the spoke material. Stainless steel (very common) has a Young's modulus of approximately 210 GPa. Aluminum and titanium are significantly less stiff (69 GPa and 105 GPa, respectively), but are also less dense.</p>
+<p><strong>Diameter</strong>: The effective average diameter of the spoke. For a straight-gauge spoke, this is simply the diameter. For a bladed spoke, the effective diameter is <code>d_eff = sqrt(1.273 * area)</code>, where area is the cross-sectional area. One could estimate the cross-sectional area by weighing a single spoke, knowing the density and length, or by measuring the short and long widths and <a href="https://en.wikipedia.org/wiki/Ellipse#Area">approximating the cross-section as an ellipse</a>. The effective diameter for butted spokes is more complicated, but is generally close to, but larger than the diameter of the thin section.</p>
+<p><strong>Spoke tension</strong>: Set the average tension in each spoke, in <a href="https://en.wikipedia.org/wiki/Kilogram-force">kgf</a>. On a symmetric wheel, the drive-side and non-drive-side tension will be equal. On an asymmetric wheel, the tension will be higher on the side with the smaller rim-to-flange distance (i.e. the drive-side on a typical rear wheel). The app will automatically calculate the correct tension for the opposite side, regardless of which slider you control.</p>
+<h3 id="applying-forces">Applying forces</h3>
+<p>Apply external forces to the rim either by choosing from preset force scenarios (e.g. "Weight," "Pedaling torque," etc), or by adding your own force using the table. To add a preset force scenario, select a scenario from the dropdown list and it will be automatically added to the table. Note that adding a scenario does not remove previously added scenarios. The "Weight" scenario is already added by default. If you add it again, the total weight applied will be doubled.</p>
+<p>Add your on forces manually by clicking on the plus sign at the bottom of the forces table. To edit an existing force, click on any cell in the forces table. Clicking on the force type (Radial, Lateral, or Tangential) will cycle through the available types. Clicking on the Loc. or Mag. values will allow you to enter custom values. The location is specified in degrees counter-clockwise from the bottom of the wheel. The magnitude is specified in units of kgf. To remove a force, click on the trash icon to the right.</p>
+<p>For the purposes of adding forces and calculating deformation, the hub acts as a rigid reference point. Whatever forces are applied to the rim, the solver will automatically constrain the hub using whatever combination of forces and torques are necessary to keep the wheel in <a href="https://en.wikipedia.org/wiki/Mechanical_equilibrium">mechanical equilibrium</a>. You cannot directly apply forces to the hub. This means, for example, that to simulate a drive torque, you must apply a positive tangential force at 0 degrees equal to the torque divided by the rim radius.</p>
+<blockquote>
+<p>Note: To apply a braking force with a <em>disc brake</em>, apply a single, negative tangential force at 0 degrees (the ground). The torque from the disc will automatically be applied to the hub. To apply a braking force with a <em>rim brake</em>, apply a negative tangential force at 0 degrees, and an equal but positive tangential force at 180 degrees (the brake pads). Both of these scenarios are included as force presets</p>
+</blockquote>
+<h3 id="adjusting-spokes">Adjusting spokes</h3>
+<p>You can also use the app to see what happens when you tighten or loosen spokes. Specify spoke adjustments in the bottom table on the Forces tab. To add an adjustment, click or tap the plus sign and then tap the "Spoke Number" and "Number of turns" fields to edit. Spoke numbers run from 1 (bottom-most spoke) up to the specified number of spokes, increasing counter-clockwise. The "Number of turns" is converted to a change in unstressed spoke length using a thread pitch of 56 TPI (thread-per-inch). A positive number indicates an adjustment that tightens the spoke.</p>
+<h3 id="interpreting-results">Interpreting results</h3>
+<h4 id="tensions-plot">Tensions plot</h4>
+<p>The spoke tensions can be viewed as a <strong>Polar</strong> plot or a <strong>Column</strong> plot. Spoke tensions are given in kgf (kilogram-force) units. Tensions less than zero cannot be shown on the polar plot. The initial tensions in the undeformed wheel are shown as blue and orange circles. In the column plot, you can view either the <strong>Absolute</strong> tension, or the <strong>Difference</strong> in tension between the stressed and unstressed wheel. Negative values in the Difference plot indicate a <em>loss</em> of tension. The bottom-most spoke is plotted in the middle of the column plot.</p>
+<blockquote>
+<p>The solver does not properly account for the loss of stiffness that occurs when a spoke completely loses tension. If the solution contains any negative tensions, the app will raise a warning.</p>
+<p>Hover your mouse over (or tap) any datapoint to see its value</p>
+</blockquote>
+<h4 id="deformation-plot">Deformation plot</h4>
+<p>The deformation plot shows the distortion of the rim in each direction. Click or tap the Radial, Lateral and Twist toggle buttons to add or remove traces from the plot. Radial deformation refers to distortion of the rim in its own plane. Lateral deformation refers to movement of the rim out of its plane. Twist refers to rotation of the rim cross-section, relative to its initial position. Since twist has units of angle (radians), twist is plotted as <code>radius*twist</code> so that it has the same units as radial and lateral deformation.</p>
+<p>In the <strong>Polar</strong> plot, the deformation is plotted as deviations from a unit circle. The deformations are scaled so that the largest displacement is equal to the scale factor. For lateral deformation, positive deviation means movement towards the non-drive side of the wheel. For twist deformation, positive deviation means rotation of the cross-section <em>in the same sense</em> as a positive lateral deviation (think of the rim cross-section as a pendulum rotating about the hub: as the pendulum swings to the one side, the bob also rotates in the same direction).</p>
+<p>In the <strong>Line</strong> plot, the deformation is plotted in units of millimeters. The x-axis corresponds to length along the rim, as if the rim had been cut at the top and unrolled into a straight line. Use the line plot if you need to read quantitative results.</p>
+<blockquote>
+<p>If you accidentally rotate or zoom any plot by clicking on or touching it, double-tap on the plot to return to the default view.</p>
+</blockquote>
+<h4 id="summary-results">Summary results</h4>
+<p>The app calculates the inertial properties and stiffness of the wheel.</p>
+<p><strong>Mass</strong>: Mass of the rim and spokes ONLY (the hub, spoke nipples, tire, tube, etc are excluded). This is the mass that you "feel" when climbing a hill at a constant velocity.</p>
+<p><strong>Eff. rotating mass</strong>: Since the wheel rotates as well as translates, it requires more energy to accelerate, per gram, than the frame or rider. The effective rotating mass is the equivalent mass which would require the same amount of energy to bring to the same velocity as the rotating wheel. This is the mass that you "feel" when accelerating the bike.</p>
+<blockquote>
+<p>The effective rotating mass cannot theoretically exceed 2x the mass of the wheel, and cannot be less than 1.333x the mass of the wheel.</p>
+</blockquote>
+<p><strong>Radial stiffness</strong>: The radial force, applied at 0 degrees, which would produce a unit displacement in the radial direction.</p>
+<p><strong>Lateral stiffness</strong>: The lateral force, applied at 0 degrees, which would produce a unit displacement in the lateral direction. This is the stiffness famously measured by <a href="https://www.sheldonbrown.com/rinard/wheel_index.html">Damon Rinard</a>.</p>
+<p><strong>Torsional stiffness</strong>: The force, applied at 0 degrees, which would cause the hub to rotate by 1 degree relative to the rim. This is <strong>not</strong> related to the torsional stiffness of the rim. The torsional stiffness of the wheel is almost entirely determined by the spoke pattern and properties.</p>
+<p><strong>Drive-side/Non-drive-side tension</strong>: Spoke tensions on each side of the wheel, in kgf.</p>
+<p><strong>Average tension</strong>: The average <em>radial</em> tension acting on the rim. This is the average tension supported by the rim. The average tension is slightly less than then the tension on either side (in a symmetric wheel) because the spokes are not perfectly radial.</p>
+<p><strong>Maximum average tension</strong>: The rim can only withstand a certain amount of tension without buckling. The <em>maximum average tension</em> is the theoretical average radial tension which would cause the rim to taco during building. In practice, you can generally get to about half of the theoretical tension before the rim becomes too distorted. <a href="#references">Jobst Brandt [2]</a> advocated using this method to determine the proper tension for a wheel. The maximum tension is calculated from Equation 4.4 in <a href="#references">reference [1]</a>.</p>
+<p><strong>Lateral/Radial force to buckle spokes</strong>: The maximum force that can be applied before the first spoke buckles. Beyond this point the wheel will lose stiffness and strength.</p>
+<blockquote>
+<p>Lateral forces are usually also accompanied by a radial force (due to the weight of the bike and rider). Therefore the actual lateral force to buckle spokes would be reduced if a radial load is present.</p>
+</blockquote>
+<h2 id="notes-regarding-the-solver">Notes regarding the solver</h2>
+<p>The full modeling assumptions and derivations underlying the app are described in detail in my Ph.D. thesis: <a href="#references"><em>Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</em></a>. The app uses the Mode Matrix Model described in Section 2.4.1 of the thesis.</p>
+<p>The mechanical properties and deformations are calculated using my <a href="https://github.com/dashdotrobot/bike-wheel-api">Bike Wheel API</a>. The API accepts options in JSON format and returns a JSON object with the results. The API is built in Python and runs on Amazon AWS Lambda. The Bike Wheel API is just a wrapper for my Python library, <a href="https://github.com/dashdotrobot/bike-wheel-calc">bike-wheel-calc</a>.</p>
+<h2 id="got-feedback-found-a-bug">Got feedback? Found a bug?</h2>
+<p>This app is <strong>VERY</strong> much a work in progress. The code for the app and website is available on <a href="https://github.com/bicyclewheel/bicyclewheel.github.io">GitHub</a>. If you find bugs or want to suggest features, log an issue or contact me at <code>mford &lt;at&gt; u.northwestern.edu</code>.</p>
+<h2 id="references">References</h2>
+<p>[1] Matthew Ford, <a href="https://github.com/dashdotrobot/phd-thesis/releases/download/v1.0/Ford_BicycleWheelThesis_v1.0.pdf">Reinventing the Wheel: Stress Analysis, Stability, and Optimization of the Bicycle Wheel</a>, Ph.D. Thesis, Northwestern University (2018)</p>
+<p>[2] Jobst Brandt, <em>The Bicycle Wheel</em>, Avocet (1993).</p>
+
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+</body>
+</html>

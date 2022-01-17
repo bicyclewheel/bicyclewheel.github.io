@@ -1,0 +1,23 @@
+blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.main-content {
+  margin-top: 1em;
+}
+
+.figure-caption {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.icon {
+  font-size: 2em;
+  font-color: #eee;
+}
+
+.table-sm {
+  font-size: 12px;
+}

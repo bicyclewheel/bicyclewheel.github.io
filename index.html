@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="english">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="http://localhost:8000/theme/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <title>bicyclewheel.info - BicycleWheel.info</title>
+  <!-- Open Graph tags -->
+    <meta property="og:site_name" content="bicyclewheel.info">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bicyclewheel.info">
+    <meta property="og:url" content="http://localhost:8000">
+    <meta property="og:description" content="bicyclewheel.info">
+      <meta property="og:image"
+            content="http://localhost:8000/images/bicyclewheelinfo_screenshot.png">
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8000/">bicyclewheel.info </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/wheel-simulator/">Wheel Simulator</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/rim-stiffness/">Rim Stiffness</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/articles/">Articles</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/bicyclewheel/bicyclewheel.github.io" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<div class="container-fluid main-content">
+
+
+    
+
+<div class="jumbotron jumbotron-fluid py-3">
+  <div class="container-fluid">
+    <h1>Bicycle wheel simulator</h1>
+    <p class="lead">An interactive app for designing and testing virtual bicycle wheels. Choose your wheel parameters, add forces like rider wight and pedaling torque, and plot deformation and spoke tensions.</p>
+
+    <a class="btn btn-primary" href="/wheel-simulator/">Try it out!</a>
+  </div>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-sm-4">
+        <img class="img-fluid" src="http://localhost:8000/images/home/tensions-screenshot-t.png" />
+      </div>
+      <div class="col-sm-4">
+        <img class="img-fluid" src="http://localhost:8000/images/home/deform-screenshot-t.png" />
+      </div>
+      <div class="col-sm-4">
+        <img class="img-fluid" src="http://localhost:8000/images/home/column-screenshot-t.png" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <h3>Sophisticated stress analysis</h3>
+  <p>Results are based on a mathematical model of the wheel that takes into account the effects of spoke tension and rim compression. The model properly predicts the "softening" effect of excessive spoke tension: the lateral stiffness of the wheel is reduced due to the compression in the rim.</p>
+
+  <h3>Library of rim properties</h3>
+  <p>The <a href="/rim-stiffness/">stiffness properties of a number of rims</a> have been measured using the <a href="https://rdcu.be/GPFI" target="_blank">acoustic method</a> developed by Matt Ford and Patrick Peng. You can select one of these pre-defined rims, or define your own by setting the bending and torsion stiffness manually.</p>
+
+  <h3>About the author</h3>
+  <p><strong>bicyclewheel.info</strong> is a side-project by Matt Ford, author of <a href="https://github.com/dashdotrobot/phd-thesis/releases/download/v1.0/Ford_BicycleWheelThesis_v1.0.pdf" targot="_blank">Reinventing the Wheel: Stress Analysis, Stablity, and Optimization of the Bicycle Wheel</a>.</p>
+
+  <hr />
+  <p><small><strong>To state the obvious:</strong> This website is made freely available for education purposes only. No guarantees are given as to the accuracy or applicability of the results quoted in or calculated by this website. The Bicycle Wheel Simulator is not a substitute for the advice of a competent wheelbuilder or bicycle mechanic. The author accepts no responsibility for any damages, including injury or death, arising out of or in connection with information obtained from this website.</small></p>
+
+</div>
+
+
+
+
+</div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+</body>
+</html>

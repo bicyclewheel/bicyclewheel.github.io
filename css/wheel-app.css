@@ -1,0 +1,36 @@
+
+.form-label-sm {
+  font-size: 14px;
+}
+
+.table-sm {
+  font-size: 12px;
+}
+
+.form-group-sm > label, span, strong {
+  font-size: 14px;
+}
+
+div.hub-slider-left {
+  padding-right: 0px !important;
+}
+
+div.hub-slider-right {
+  padding-left: 0px !important;
+}
+
+div.alert {
+  font-size: 14px;
+}
+
+.nav-tabs {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d;
+}

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="english">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63010494-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63010494-2');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="http://localhost:8000/theme/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://localhost:8000/css/wheel-app.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <title>bicyclewheel.info - Wheel Simulator</title>
+  <!-- Open Graph tags -->
+    <meta property="og:site_name" content="bicyclewheel.info">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bicyclewheel.info">
+    <meta property="og:url" content="http://localhost:8000">
+    <meta property="og:description" content="bicyclewheel.info">
+      <meta property="og:image"
+            content="http://localhost:8000/images/bicyclewheelinfo_screenshot.png">
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:8000/">bicyclewheel.info </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Menu items -->
+
+        <!-- Pages -->
+        <li class="nav-item"><a class="nav-link active" href="http://localhost:8000/wheel-simulator/">Wheel Simulator</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/instructions/">Instructions</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/rim-stiffness/">Rim Stiffness</a></li>
+
+        <!-- Article categories -->
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/articles/">Articles</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-1"><a class="nav-link" href="https://github.com/bicyclewheel/bicyclewheel.github.io" target="_blank"><i class="fab fa-github-square icon"></i> </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+<div class="container-fluid main-content">
+
+
+    
+
+<div class="row">
+  <div class="col-md-4 col-lg-3">
+
+    <!-- Toolbar Navigation Tabs -->
+    <ul class="nav nav-tabs nav-tabs" id="toolsTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2 active" id="tabRim" data-toggle="tab" href="#panelRim" role="tab" aria-controls="panelRim" aria-selected="true">Rim</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2" id="tabHub" data-toggle="tab" href="#panelHub" role="tab" aria-controls="panelHub" aria-selected="false">Hub</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2" id="tabSpokes" data-toggle="tab" href="#panelSpokes" role="tab" aria-controls="panelSpokes" aria-selected="false">Spokes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2" id="tabForces" data-toggle="tab" href="#panelForces" role="tab" aria-controls="panelForces" aria-selected="false">Forces</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="toolsContents">
+
+      <!-- RIM TOOLBAR -->
+      <div class="tab-pane fade show active py-2" id="panelRim" role="tabpanel" aria-labelledby="tabRim">
+
+        <form id="formRim">
+
+          <div class="form-group form-group-sm">
+            <label for="rimPreset"><strong>Choose a pre-defined rim:</strong></label>
+            <select class="form-control form-control-sm" name="rimPreset" id="rimPreset">
+              <option>Custom</option>
+            </select>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="rimSize"><strong>or define a custom rim:</strong></label>
+            <select class="form-control form-control-sm rim-input" name="rimSize" id="rimSize"></select>
+
+            <select class="form-control form-control-sm rim-input" name="rimMatl" id="rimMatl"></select>
+
+            <label for="rimMass">Mass [grams]:&nbsp;</label><span><strong>540</strong></span>
+            <input type="range" class="form-control-range custom-range update-range rim-input" name="rimMass" id="rimMass" min="10" step="10" max="2000" value="540">
+
+            <label for="rimRadStiff">Radial stiffness [N-m<sup>2</sup>]:&nbsp;</label><span><strong>110</strong></span>
+            <input type="range" class="form-control-range custom-range update-range rim-input" name="rimRadStiff" id="rimRadStiff" min="10" max="1000" step="10" value="110">
+
+            <label for="rimLatStiff">Lateral stiffness [N-m<sup>2</sup>]:&nbsp;</label><span><strong>220</strong></span>
+            <input type="range" class="form-control-range custom-range update-range rim-input" name="rimLatStiff" id="rimLatStiff" min="10" max="500" step="10" value="220">
+
+            <label for="rimTorStiff">Torsional stiffness [N-m<sup>2</sup>]:&nbsp;</label><span><strong>25</strong></span>
+            <input type="range" class="form-control-range custom-range update-range rim-input" name="rimTorStiff" id="rimTorStiff" min="5" max="200" step="5" value="25">
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- HUB TOOLBAR -->
+      <div class="tab-pane fade py-2" id="panelHub" role="tabpanel" aria-labelledby="tabHub">
+
+        <form id="formHub">
+
+          <div class="form-group form-group-sm">
+            <label>Rim-to-flange distance [mm]:</label>
+
+            <div class="form-check form-group-sm">
+              <input class="form-check-input" type="checkbox" value="" id="hubSymm" checked>
+              <label class="form-check-label" for="hubSymm">Symmetric</label>
+            </div>
+
+            <div class="form-row">
+              <div class="col-6">
+                <span>Left:&nbsp;</span><span id="hubWidthLeft_label"><strong>25</strong></span>
+              </div>
+              <div class="col-6">
+                <span>Right:&nbsp;</span><span id="hubWidthRight_label"><strong>25</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm form-row">
+            <div class="col-6 hub-slider-left">
+              <input type="range" class="form-control-range custom-range" name="hubWidthLeft" id="hubWidthLeft" min="-50" max="-1" step="1" value="-25">
+            </div>
+            <div class="col-6 hub-slider-right">
+              <input type="range" class="form-control-range custom-range" name="hubWidthRight" id="hubWidthRight" min="1" max="50" step="1" value="25">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="hubDiameter">Flange diameter [mm]:&nbsp;</label><span><strong>50</strong></span>
+            <input type="range" class="form-control-range custom-range update-range" name="hubDiameter" id="hubDiameter" min="0" max="100" value="50">
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- SPOKES TOOLBAR -->
+      <div class="tab-pane fade py-2" id="panelSpokes" role="tabpanel" aria-labelledby="tabSpokes">
+
+        <div class="form-group form-group-sm">
+          <label for="spkNum">Number of spokes:&nbsp;</label><span><strong>36</strong></span>
+          <input type="range" class="form-control-range custom-range update-range" name="spkNum" id="spkNum" min="4" max="64" step="2" value="36">
+        </div>
+
+        <hr />
+
+        <form id="formSpokesDS">
+          <div class="form-group form-group-sm">
+            <strong>Drive-side spokes</strong>
+
+            <select class="form-control form-control-sm spokes-ds" name="spkPattern" id="spkPattern">
+              <option>Radial</option>
+              <option>1-cross</option>
+              <option>2-cross</option>
+              <option selected>3-cross</option>
+              <option>4-cross</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select class="form-control form-control-sm spokes-ds" name="spkMatl" id="spkMatl"></select>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="spkDiamDS">Diameter [mm]:&nbsp;</label><span><strong>2</strong></span>
+            <input type="range" class="form-control-range custom-range update-range spokes-ds" name="spkDiam" id="spkDiam" min="0.1" , max="3" step="0.1" value="2">
+
+            <label for="spkTensDS">Tension [kgf]:&nbsp;</label><span><strong>80</strong></span>
+            <input type="range" class="form-control-range custom-range update-range" name="spkTens" id="spkTens" min="0" max="200" step="5" value="80">
+          </div>
+        </form>
+
+        <hr />
+
+        <div class="form-group-sm"><strong>Non-drive-side spokes</strong></div>
+
+        <div class="form-check form-group-sm">
+          <input class="form-check-input" type="checkbox" value="" id="spkNDSSame" checked>
+          <label class="form-check-label" for="spkNDSSame">Same as drive-side</label>
+        </div>
+
+        <div class="collapse" id="spkNDSPanel">
+
+          <form id="formSpokesNDS">
+            <div class="form-group">
+              <select class="form-control form-control-sm" name="spkPattern" id="spkPatternNDS">
+                <option>Radial</option>
+                <option>1-cross</option>
+                <option>2-cross</option>
+                <option selected>3-cross</option>
+                <option>4-cross</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control form-control-sm" name="spkMatl" id="spkMatlNDS"></select>
+            </div>
+
+            <div class="form-group form-group-sm">
+              <label for="spkDiamNDS">Diameter [mm]&nbsp;</label><span><strong>2</strong></span>
+              <input type="range" class="form-control-range custom-range update-range" name="spkDiam" id="spkDiamNDS" min="0.1" , max="3" step="0.1" value="2">
+
+              <label for="spkTensNDS">Tension [kgf]:&nbsp;</label><span><strong>80</strong></span>
+              <input type="range" class="form-control-range custom-range update-range" name="spkTens" id="spkTensNDS" min="0" max="200" step="5" value="80">
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- FORCES TOOLBAR -->
+      <div class="tab-pane fade py-2" id="panelForces" role="tabpanel" aria-labelledby="tabForces">
+
+        <p>Choose from force presets, or add forces manually in the table below. Click on any cell to edit.</p>
+
+        <div class="dropdown show my-2">
+          <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="forcePreset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Add a force scenario
+          </a>
+          <div class="dropdown-menu" id="forcePresetDropdown" aria-labelledby="forcePreset"></div>
+        </div>
+
+        <table class="table table-striped table-hover table-sm" id="tableForces">
+          <tr><th>Type</th><th>Loc. [deg]</th><th>Mag. [kgf]</th><th></th></tr>
+          <tr><th class="force-type text-nowrap">Radial <i class="fas fa-angle-double-down"></i></th><td>0</td><td>50</td><th><a class="remove-row" href="#"><i class="fas fa-trash-alt"></i></a></th></tr>
+          <tr><th colspan="3">Add a force</th><th><a class="add-force" href="#"><i class="fas fa-plus-circle"></i></a></th></tr>
+        </table>
+
+        <hr />
+        <p>Adjust (tighten or loosen) individual spokes. Positive=tighter, negative=looser.</p>
+
+        <table class="table table-striped table-hover table-sm" id="tableAdjust">
+          <tr><th>Spoke number</th><th>Number of turns</th><th></th></tr>
+          <!-- <tr><td>0</td><td>0</td><th><a class="remove-row" href="#"><i class="fas fa-trash-alt"></i></a></th></tr> -->
+          <tr><th colspan="2">Adjust another spoke</th><th><a class="add-adjust" href="#"><i class="fas fa-plus-circle"></i></a></th></tr>
+        </table>
+
+      </div>
+
+      <div class="form-group">
+        <button type="button" id="btnPressMe" class="btn btn-success btn-block">Calculate</button>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md-8 col-lg-9">
+
+    <ul class="nav nav-tabs nav-tabs" id="plotTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2 active" id="tabTension" data-toggle="tab" href="#panelTension" role="tab" aria-controls="panelTension" aria-selected="true">Spoke tensions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-1 px-2" id="tabDeform" data-toggle="tab" href="#panelDeform" role="tab" aria-controls="panelDeform" aria-selected="false">Deformation</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="plotContents">
+
+      <div class="tab-pane fade show active py-2" id="panelTension" role="tabpanel" aria-labelledby="tabTension">
+        <div id="tensionControls" class="my-1">
+          <div id="tensionPlotType" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="tensionPlotType" autocomplete="off" checked>Polar
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionPlotType" autocomplete="off">Column
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionPlotType" autocomplete="off">Table
+            </label>
+          </div>
+
+          <div id="tensionDiff" class="btn-group btn-group-sm btn-group-toggle d-none" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="tensionDiff" autocomplete="off" checked>Absolute
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="tensionDiff" autocomplete="off">Difference
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade py-2" id="panelDeform" role="tabpanel" aria-labelledby="tabDeform">
+        <div id="deformControls" class="my-1">
+          <div class="form-row">
+
+            <div class="col-md-8">
+              <div id="deform-plot-type" class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="deform-plot-type" autocomplete="off" checked>Polar
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="deform-plot-type" autocomplete="off">Line
+                </label>
+              </div>
+
+              <div class="btn-group btn-group-sm">
+                <button type="button" id="deformRadial" class="btn btn-sm btn-secondary deform-button active">
+                  Radial
+                </button>
+                <button type="button" id="deformLateral" class="btn btn-sm btn-secondary deform-button">
+                  Lateral
+                </button>
+                <button type="button" id="deformTwist" class="btn btn-sm btn-secondary deform-button">
+                  Twist
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group form-group-sm">
+                <label for="scaleFactor">Scale factor:&nbsp;</label><span><strong>20%</strong></span>
+                <input type="range" class="form-control-range custom-range update-range" id="scaleFactor" min="1" max="100" step="1" value="20">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Space to display errors and warnings -->
+    <div id="alerts"></div>
+
+    <!-- Results: Plot -->
+    <div id="plotDiv" class="my-1"></div>
+
+    <!-- Results: Table -->
+    <div class="row">
+      <div id="tableDiv" class="col-md-auto my-1 collapse">
+        <p>Spoke tensions are given in units of kilogram-force (kgf)</p>
+        <table id="resultsTable" class="table table-sm table-hover table-striped">
+          <thead><tr><th>Spoke</th><th>Initial tension</th><th>Tension change</th><th>Final tension</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Results: Summary -->
+    <div id="resultSummary" class="my-1">
+
+      <h6>Mass Properties (without hub):</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Mass</th><td id="sumMassGrams">-</td><td id="sumMassLbs">-</td></tr>
+        <tr><th>Eff. Rotating mass</th><td id="sumMassRotGrams">-</td><td id="sumMassRotLbs">-</td></tr>
+      </table>
+
+      <h6>Stiffness</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Radial stiffness</th><td id="sumStiffRadSI">-</td><td id="sumStiffRadLbs">-</td></tr>
+        <tr><th>Lateral stiffness</th><td id="sumStiffLatSI">-</td><td id="sumStiffLatLbs">-</td></tr>
+        <tr><th>Torsional stiffness</th><td id="sumStiffTorSI">-</td><td id="sumStiffTorLbs">-</td></tr>
+      </table>
+
+      <h6>Spoke tension</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Drive-side tension</th><td id="sumTensDSSI">-</td><td id="sumTensDSLbs">-</td></tr>
+        <tr><th>Non-drive-side tension</th><td id="sumTensNDSSI">-</td><td id="sumTensNDSLbs">-</td></tr>
+        <tr><th>Average tension</th><td id="sumTensAvgSI">-</td><td id="sumTensAvgLbs">-</td></tr>
+        <tr><th>Maximum average tension</th><td id="sumTensMaxSI">-</td><td id="sumTensMaxLbs">-</td></tr>
+      </table>
+
+      <h6>Strength</h6>
+      <table class="table table-sm table-hover">
+        <tr><th>Lateral force to buckle spokes</th><td id="sumForceLatSI">-</td><td id="sumForceLatLbs">-</td></tr>
+        <tr><th>Radial force to buckle spokes</th><td id="sumForceRadSI">-</td><td id="sumForceRadLbs">-</td></tr>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+<footer>
+<div class="container-fluid text-center py-3">
+  <small>&copy; 2020 <a href="http://dashdotrobot.com" target="_blank">Matthew Ford</a>.
+    Powered by <a href="https://getpelican.com" target="_blank">Pelican</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+  </small>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+<script src="http://localhost:8000/js/mindmup-editabletable.js"></script>
+<script src="http://localhost:8000/js/wheel-app-constants.js"></script>
+<script src="http://localhost:8000/js/wheel-app-plot.js"></script>
+<script src="http://localhost:8000/js/wheel-app.js"></script>
+
+</body>
+</html>
